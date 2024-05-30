@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int a=10; //stored in stack
+    int *p=new int(); //allocate memory in heap
+    *p=10; //stored in heap
+    delete(p); //deallocate memory in heap
+    p=new int[4]; //allocate 4*4 bit [4 elements in an array and 4 byte for int datatype] memory in heap 
+    delete[]p; //deallocate memory in heap
+    p=NULL;
+    return 0;
+}

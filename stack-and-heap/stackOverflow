@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+void func1(){
+    //function body
+}
+void func2(){
+    //function body
+}
+void func3(){
+    //function body
+}
+void func4(){
+    //function body
+}
+int main(){
+    func1();
+    func2();    
+    func3();
+    func4();
+    return 0;
+}
