@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int decimalToBinary(int n){
+    int ans=0;
+    int x=1;
+    while(x<=n){ //n is greater than equal to x
+        x*=2; //fractional part
+        x/=2; //integral part
+    }
+    while(x>0){ //until and unless x is greater than 0
+        int lastDigit=n/x; 
+        n-=lastDigit*x; 
+        x/=2; //base of binary 
+        ans=ans*10+lastDigit; 
+    }
+    return ans;
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<decimalToBinary(n)<<endl;
+    return 0;
+}

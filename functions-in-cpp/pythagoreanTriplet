@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+bool check(int x,int y, int z){ //3 values to be taken as an input and check if it is a pythagorean triplet or not.
+    int a=max(x,max(y,z)); //max() function is used to find the max number among the 3 inputs
+                           //3 values cant be assigned to the function so used function in function
+    int b,c; //b and c given the values of the other 2 pythogorean triplets 
+    if(a==x){ //when a is equal to x then b and c will be assigned the values of y and z
+        b=y; 
+        c=z;
+    } else if(a==y){ //when a is equal to y then b and c will be assigned the values of x and z
+        b=x;
+        c=z;
+    } else{ //when a is equal to z then b and c will be assigned the values of x and y
+        b=x;
+        c=y;
+    }
+    if(a*a==b*b+c*c){ //if the condition is satisfied then it is a pythagorean triplet and the function will 
+        return true;
+    } else{ //if the condition is not satisfied then it is not a pythagorean triplet and the function will
+        return false;
+    }
+}
+int main(){
+    int x,y,z;
+    cin>>x>>y>>z;
+    if(check(x,y,z)){ //if the function returns true then it is a pythagorean triplet and the function will
+        cout<<"pythagorean triplet";
+    } else{ //if the function returns false then it is not a pythagorean triplet and the function will
+        cout<<"not a pythagorean triplet";
+    }
+    return 0;
+}

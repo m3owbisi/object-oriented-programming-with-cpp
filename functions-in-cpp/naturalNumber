@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int sum(int n){
+    int ans=0; //sum=0;
+    for(int i=1;i<=n;i++){ //starting off with 1 as 0 is already assigned for natural numbers
+        ans+=i; //sum+=i;
+    }
+    return ans;
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum(n)<<endl;
+    return 0;
+}
