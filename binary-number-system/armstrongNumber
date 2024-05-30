@@ -1,0 +1,21 @@
+#include<iostream>
+#include<math.h> //cpp header file for pow() function
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int sum=0; //sum=0 and product=1
+    int original=n; //to store the original value of n when n is changed for every loop
+    while(n>0){
+        int lastDigit=n%10; //an armstrong number is a number that is equal to the sum of cubes of its digits.
+        sum+=pow(lastDigit,3); //pow() function is used to find the power of a number 
+        n/=10;
+    }
+    if(sum==original){ //when the value of n entered as an input and the sum found are both equal then probably its
+                       //an armstrong number so we print "armstrong number"
+        cout<<"armstrong number"<<endl;
+    } else{ //else "not an armstrong number"
+        cout<<"not an armstrong number"<<endl;
+    }
+    return 0;
+}

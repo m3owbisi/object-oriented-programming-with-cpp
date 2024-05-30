@@ -1,0 +1,20 @@
+#include<iostream>
+#include<cmath> //cpp header file for sqrt() function
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    bool flag=0; //to flash and check if the value is true or false
+    for(int i=2;i<=sqrt(n);i++){ //prime number starting from 2 to sqrt(n)
+        if(n%i==0){ //after dividing the value is divisible then non-prime
+            cout<<"non-prime"<<endl;
+            flag=1; //the flag will change from 0 to 1 if this loop works 
+            break;
+        }
+    }
+    if(flag==0){ //when it isnt flagged with 1 then it possibly is 0 or we can say after dividing the value isnt
+                 //divisible then prime
+        cout<<"prime"<<endl;
+    }
+    return 0;
+}

@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int reverse=0; //for sum the reverse is initially initialized with 0
+    while(n>0){ //as long as n is greater than 0 the loop will run
+        int lastDigit=n%10; //when remainder or (N%10) is used it usually represents the last digit of the number
+        reverse=reverse*10+lastDigit; //n=4321 N%10=4321%10=1 (1 for this case is the last digit) reverse=0*10+1=0+1=1;
+        n/=10;  // quotient to get back to the previous other remaining numbers that is n=4321 (N/10)=4321/10=432;
+    } 
+    cout<<reverse<<endl;
+    return 0;
+}
