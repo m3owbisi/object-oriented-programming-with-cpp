@@ -1,0 +1,9 @@
+#include<iostream>
+using namespace std;
+int main(){
+    short int si;
+    long int li;
+    cout<<"size of short int:\t"<<sizeof(si)<<endl;
+    cout<<"size of long int:\t"<<sizeof(li)<<endl;
+    return 0;
+}

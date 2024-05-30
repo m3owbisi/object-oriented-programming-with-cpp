@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int a;  //declaration
+    a=12;   //initialisation
+    cout<<"size of int:\t"<<sizeof(a)<<endl;
+    float b;
+    cout<<"size of float:\t"<<sizeof(b)<<endl;
+    char c;
+    cout<<"size of char:\t"<<sizeof(c)<<endl;
+    bool d;
+    cout<<"size of bool:\t"<<sizeof(d)<<endl;
+    return 0;
+}
