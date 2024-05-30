@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int ageGF1=20;
+    int ageGF2=21;
+    int ageGF3=20;
+    int ageGF4=18;
+    int ageGF5=19;
+    int ageGF6=20;
+    cout<<"the age of GF4 is:\t"<<ageGF4<<endl;
+    return 0;
+}

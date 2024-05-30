@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int array[n];
+    for(int i=0;i<n;i++){
+        cin>>array[i]; //size of array taken from user
+    }
+    for(int i=0;i<n;i++){
+        cout<<array[i]<<"\t"; //to print the elements of an array from user
+    }
+    return 0;
+}

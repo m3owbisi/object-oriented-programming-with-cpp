@@ -1,0 +1,19 @@
+#include<iostream>
+#include<climits> //to use INT_MAX and INT_MIN also max() and min()
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){ //i<n because of indexing n-1 
+        cin>>arr[i];
+    }
+    int maxNo=INT_MIN; //maxNo holding the min value for comparing
+    int minNo=INT_MAX; //minNo holding the max value for comparing
+    for(int i=0;i<n;i++){
+        maxNo=max(maxNo, arr[i]); //finding the maximum value 
+        minNo=min(minNo, arr[i]); //finding the minimum value
+    }
+    cout<<maxNo<<"\t"<<minNo<<endl;
+    return 0;
+}
