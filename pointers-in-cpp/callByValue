@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+void swap(int a,int b){
+    int temp=a;
+    a=b;
+    b=a;
+}
+int main(){ //passing pointer to function, calling by value
+    int a=2;
+    int b=4;
+    swap(a,b);
+    cout<<a<<"\t"<<b<<endl; //2 4
+    return 0;
+}

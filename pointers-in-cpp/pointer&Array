@@ -1,0 +1,7 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[]={10,20,30};
+    cout<<*arr<<endl; //10 for the 0th index element
+    return 0;
+}
