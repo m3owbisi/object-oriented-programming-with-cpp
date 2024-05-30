@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n; //number of times the loop will run
+    cin>>n;
+    int a=0; //intialization 
+    for(int i=1;i<=n;i++){
+        a=a+1;
+    }
+    cout<<a<<endl;
+    return 0;
+}
