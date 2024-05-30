@@ -1,0 +1,8 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str="blegh";
+    cout<<'a'-'A'<<endl; //32
+    return 0;
+}

@@ -1,0 +1,8 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str="apni kaksha"; //cin>>str; wont take spaces into consideration
+    cout<<str; //apni kaksha
+    return 0 ;
+}

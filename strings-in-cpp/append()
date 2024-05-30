@@ -1,0 +1,11 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string str;
+    string s1="fam"; //father and mother ;(
+    string s2="ily"; //i love you ><
+    s1.append(s2); //appends s2 to s1 and outputs "family"
+    cout<<s1<<endl; //s1=s1+s2;
+    return 0;
+}
