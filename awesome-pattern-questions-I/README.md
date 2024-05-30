@@ -1,0 +1,1 @@
+# awesome-pattern-questions-I
