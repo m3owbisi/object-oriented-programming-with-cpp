@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int sum(int n){
+    if(n==0){
+        return 0; //base case i.e. if the n becomes 0 then it will return 0
+    }
+    int prevSum=sum(n-1); //recursive function
+    return n+prevSum;
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum(n)<<endl;
+    return 0;
+}
