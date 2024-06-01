@@ -1,0 +1,71 @@
+#include<iostream>
+#include"bits/stdc++.h"
+#include<algorithm>
+#include<string>
+#include<stack>
+#include<set>
+#include<vector>
+#include<map>
+#include<unordered_map>
+#include<queue>
+#include<climits>
+// #define int long long
+#define vi vector<int>
+#define vvi vector<vi>
+#define pii pair<int,int>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define ff first
+#define ss second
+#define setbits(x) builtin_popcount(x)
+//const int N=1e5+2,MOD=1e9+7;
+//bool vis[N];
+// vector<int> adj[N];
+using namespace std;
+// representation of graphs
+//vi adj[N];
+//vector<bool> vis;
+//vector<vector<int>> adj;
+//vector<int> components;
+//vector<int> col;
+//bool bipart;
+//const int N=1e5+6;
+//vector<int> parent(N);
+//vector<int> sz(N);
+//int n,m;
+//const int N=1e5+3;
+//vector<vector<int>> g[N];
+//int cost=0;
+//vector<int> dist(N),parent(N);
+const int INF=1e9;
+//vector<bool> vis(N);
+//const int inf=1e7;
+int32_t main(){
+    int n,m;
+    cin>>n>>m;
+    vector<vector<int>> edges;
+    for(int i=0;i<m;i++){
+        int u,v,w;
+        cin>>u>>v>>w;
+        edges.push_back({u,v,w});
+    }
+    int src;
+    cin>>src;
+    vector<int> dist(n,INF);
+    dist[src]=0;
+    for(int iter=0;iter<n-1;iter++){
+        bool change=false;
+        for(auto e:edges){
+            int u=e[0];
+            int v=e[1];
+            int w=e[2];
+            if(dist[v]>w+dist[u])
+                change=true;
+            dist[v]=min(dist[v],w+dist[u]);
+        }
+    }
+    for(auto i:dist)
+        cout<<i<<" ";
+    cout<<"\n";
+    return 0;
+}
