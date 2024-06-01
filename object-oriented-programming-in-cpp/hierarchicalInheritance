@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+protected:
+    string name;
+
+public:
+    Animal(const string& name)
+        : name(name) {
+    }
+
+    void eat() {
+        cout << name << " is eating." << endl;
+    }
+
+    void sleep() {
+        cout << name << " is sleeping." << endl;
+    }
+};
+
+// Derived class 1: Dog
+class Dog : public Animal {
+public:
+    Dog(const string& name)
+        : Animal(name) {
+    }
+
+    void bark() {
+        cout << name << " is barking." << endl;
+    }
+};
+
+// Derived class 2: Cat
+class Cat : public Animal {
+public:
+    Cat(const string& name)
+        : Animal(name) {
+    }
+
+    void meow() {
+        cout << name << " is meowing." << endl;
+    }
+};
+
+// Derived class 3: Bird
+class Bird : public Animal {
+public:
+    Bird(const string& name)
+        : Animal(name) {
+    }
+
+    void chirp() {
+        cout << name << " is chirping." << endl;
+    }
+};
+
+// Driver code
+int main() {
+    Dog myDog("Buddy");
+    Cat myCat("Whiskers");
+    Bird myBird("Tweetie");
+
+    myDog.eat();
+    myDog.bark();
+
+    myCat.sleep();
+    myCat.meow();
+
+    myBird.eat();
+    myBird.chirp();
+
+    return 0;
+}

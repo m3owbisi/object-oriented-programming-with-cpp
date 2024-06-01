@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class Ground{
+    int Rooms;
+    protected:
+    void Put();
+    public:
+    void Get();
+};
+class Middle:private Ground{
+    int Labs;
+    public:
+    void Take();
+    void Give();
+};
+class Top:public Middle{
+    int Roofs;
+    public:
+    void In();
+    void Out();
+};
+int main(){
+    return 0;
+}

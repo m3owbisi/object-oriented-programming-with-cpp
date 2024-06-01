@@ -1,0 +1,116 @@
+#include<iostream>
+using namespace std;
+
+class student{
+  //data members
+  private:
+  int students;
+
+  protected:
+  double cgpa;
+
+  public:
+  string name;
+  int age;
+  bool gender;
+
+  void setName(string s){
+    name=s;
+  }
+
+  void getName(){
+    cout<<name<<endl; 
+  }
+  
+  //deep copy
+  //parametrised constructor
+  student(string s,int a,int g){
+    cout<<"parametrised constructor";
+    name=s;
+    age=a;
+    gender=g;
+  }
+  
+  //shallow copy
+  //default constructor
+  student(){
+    cout<<"default constructor"<<endl;
+  }
+  
+  //copy constructor
+  student(student &e){
+    cout<<"copy constructor"<<endl;
+    name=e.name;
+    age=e.age; 
+    gender=e.gender;
+  }
+
+  //destructor
+  ~student(){
+    cout<<"destructor called"<<endl;
+  }
+
+  void printInfo(){
+    cout<<"name = ";
+    cout<<name<<endl;
+    cout<<"age = ";
+    cout<<age<<endl;
+    cout<<"gender = ";
+    cout<<gender<<endl;
+    cout<<endl;
+  }
+};
+
+int main(){
+  
+  student a;
+  a.name="Tim";
+  a.age=20;
+  a.gender=0;
+
+  student b;
+  b.name="Sim";
+  b.age=21;
+  b.gender=1;
+
+  student c;
+  c.name="Jim";
+  c.age=20;
+  c.gender=0;
+
+  student d;
+  d.name="urvi";
+  d.age=20;
+  d.gender=1;
+
+  student e("urvi",20,1);
+  e.getName(); //urvi
+  e.printInfo(); //name = urvi age = 20 gender = 1
+
+  student f(e); //student f=e;
+
+  student arr[3];
+
+  for(int i=0;i<3;i++){
+    cout<<"name = ";
+    cin>>arr[i].name;
+    cout<<"age = "; 
+    cin>>arr[i].age;
+    cout<<"gender = ";
+    cin>>arr[i].gender;
+    cout<<endl;
+  }
+
+  for(int i=0;i<3;i++){
+    arr[i].printInfo();
+  }
+
+  for(int i=0;i<3;i++){
+    string s;
+    cout<<"name = ";
+    cin>>s;
+    arr[i].setName(s);
+  }
+  
+  return 0;
+}

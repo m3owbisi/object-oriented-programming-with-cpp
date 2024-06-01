@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+//function overloading
+class Apna_College{
+    public:
+    void func(){
+        cout<<"ima function w no argument"<<endl;
+    }
+    void func(int a){
+        cout<<"ima function w int argument"<<endl;
+    }
+    void func(double a){
+        cout<<"ima function w double argument"<<endl;
+    }
+};
+int main(){
+    Apna_College obj;
+    obj.func();
+    obj.func(4);
+    obj.func(6.2);
+    return 0;
+} 
