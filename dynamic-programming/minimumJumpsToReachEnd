@@ -1,0 +1,42 @@
+/*
+    Rishabh Gupta - A peaceful soul
+*/
+#include"bits/stdc++.h"
+using namespace std;
+#define vi vector<int>
+#define vvi vector<vi>
+#define pii pair<int,int>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define ff first
+#define ss second
+#define setBits(x) builtin_popcount(x)
+//const int N=1e3+2,MOD=1e9+7;
+//const int N=1e5+2,MOD=1e9+7;
+const int N=102,MOD=1e9+7;
+//int dp[N];
+//int val[N],wt[N];
+int dp[N][N];
+int a[N];
+const int inf=1e9;
+signed main(){
+    int n;
+    cin>>n;
+    vector<int> arr(n);
+    for(auto &i:arr)
+        cin>>i;
+    vector<int> jumps(n,inf);
+    if(arr[0]==0){
+        cout<<inf<<" ";
+        return 0;
+    }
+    jumps[0]=0;
+    for(int i=1;i<n;i++){
+        for(int j=0;j<i;j++){
+            if(i<=(j+arr[j]))
+                jumps[i]=min(jumps[i],jumps[j]+1);
+        }
+    }
+    cout<<jumps[n-1]<<endl;
+    return 0;
+}

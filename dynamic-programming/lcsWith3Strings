@@ -1,0 +1,48 @@
+/*
+    Rishabh Gupta - A peaceful soul
+*/
+#include"bits/stdc++.h"
+using namespace std;
+#define vi vector<int>
+#define vvi vector<vi>
+#define pii pair<int,int>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define ff first
+#define ss second
+#define setBits(x) builtin_popcount(x)
+//const int N=1e3+2,MOD=1e9+7;
+//const int N=1e5+2,MOD=1e9+7;
+//const int N=102,MOD=1e9+7;
+//int dp[N];
+//int val[N],wt[N];
+//int dp[N][N];
+//int a[N];
+//const int inf=1e9;
+//vector<int> a;
+//int dp[100][100];
+int dp[205][205][205];
+int lcs(string &s1,string &s2,string &s3,int i,int j,int k){
+    if(i==0||j==0||k==0)
+        return 0;
+    if(dp[i][j][k]!=-1)
+        return dp[i][j][k];
+    if(s1[i-1]==s2[j-1] && s2[j-1]==s3[k-1])
+//      return 1+lcs(s1,s2,s3,i-1,j-1,k-1);
+        return dp[i][j][k]=1+lcs(s1,s2,s3,i-1,j-1,k-1);
+    int l=lcs(s1,s2,s3,i-1,j,k);
+    int r=lcs(s1,s2,s3,i,j-1,k);
+    int p=lcs(s1,s2,s3,i,j,k-1);
+    return dp[i][j][k]=max({l,r,p});
+}
+signed main(){
+    memset(dp,-1,sizeof(dp));
+    string s1;
+    cin>>s1;
+    string s2;
+    cin>>s2;
+    string s3;
+    cin>>s3;
+    cout<<lcs(s1,s2,s3,s1.size(),s2.size(),s3.size());
+    return 0;
+}

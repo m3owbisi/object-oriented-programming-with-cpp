@@ -1,0 +1,46 @@
+/*
+    Rishabh Gupta - A peaceful soul
+*/
+#include"bits/stdc++.h"
+using namespace std;
+#define vi vector<int>
+#define vvi vector<vi>
+#define pii pair<int,int>
+#define vii vector<pii>
+#define rep(i,a,b) for(int i=a;i<b;i++)
+#define ff first
+#define ss second
+#define setBits(x) builtin_popcount(x)
+//const int N=1e3+2,MOD=1e9+7;
+//const int N=1e5+2,MOD=1e9+7;
+//const int N=102,MOD=1e9+7;
+//int dp[N];
+//int val[N],wt[N];
+//int dp[N][N];
+//int a[N];
+//const int inf=1e9;
+vector<int> a;
+int dp[100][100];
+int solve(int i,int j){
+    if(i==j)
+        return a[i];
+    if(i>j)
+        return 0;
+    if(dp[i][j]!=-1)
+        return dp[i][j];
+    int l=a[i]+min(solve(i+2,j),solve(i+1,j-1));
+//  a[i..j],remCoins=a[i+1..j]
+    int r=a[j]+min(solve(i,j-2),solve(i+1,j-1));
+//  a[i..j],remCoins=a[i..j-1]
+    return dp[i][j]=max(l,r);
+}
+signed main(){
+    memset(dp,-1,sizeof(dp));
+    int n;
+    cin>>n;
+    a=vector<int> (n);
+    for(auto &i:a)
+        cin>>i;
+    cout<<solve(0,n-1)<<endl;
+    return 0;
+}
