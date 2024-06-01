@@ -1,0 +1,55 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+struct node{
+    int data;
+    node *left,*right;
+    node(int val){
+        data=val;
+        left=NULL;
+        right=NULL;
+    }
+};
+void zigZagTraversal(node *root){
+    if(root==NULL){
+        return;
+    }
+    stack<node *> currLevel;
+    stack<node *> nextLevel;
+    bool LeftToRight=true;
+    currLevel.push(root);
+    while(!currLevel.empty()){
+        node *temp=currLevel.top();
+        currLevel.pop();
+        if(temp){
+            cout<<temp->data<<"\t";
+            if(LeftToRight){
+                if(temp->left){
+                    nextLevel.push(temp->left);
+                }
+                if(temp->right){
+                    nextLevel.push(temp->right);
+                }
+            }
+            // RightToLeft
+            else{
+                if(temp->right){
+                    nextLevel.push(temp->right);
+                }
+                if(temp->left){
+                    nextLevel.push(temp->left);
+                }
+            }
+        }
+        if(currLevel.empty()){
+            LeftToRight=!LeftToRight;
+            swap(currLevel,nextLevel);
+        }
+    }
+}
+int main(){
+    // test
+    zigZagTraversal(root);
+    cout<<endl;
+    return 0;
+}
