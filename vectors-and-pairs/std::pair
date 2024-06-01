@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    pair<int,int> p;
+    pair<int,char> p1;
+    p.first=1;
+    p.second=3;
+    p1.first=2;
+    p1.second='e';
+    cout<<p.first<<"\t"<<p.second<<endl;
+    cout<<p1.first<<"\t"<<p1.second<<endl;
+    return 0;
+}
